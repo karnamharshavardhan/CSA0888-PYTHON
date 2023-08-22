@@ -1,0 +1,12 @@
+def isNumber(s):
+
+    try:
+
+        float(s)  # Try converting the string to a float
+
+        return True
+
+    except ValueError:
+
+        return False
+
