@@ -1,0 +1,63 @@
+def longest_substring(s, k):
+
+    if not s:
+
+        return 0
+
+    
+
+    # Count the frequency of each character in the string
+
+    char_count = {}
+
+    for char in s:
+
+        char_count[char] = char_count.get(char, 0) + 1
+
+    
+
+    # Find the index of the first character that appears less than k times
+
+    for i, char in enumerate(s):
+
+        if char_count[char] < k:
+
+            left_part = longest_substring(s[:i], k)
+
+            right_part = longest_substring(s[i + 1:], k)
+
+            return max(left_part, right_part)
+
+    
+
+    # All characters appear at least k times
+
+    return len(s)
+
+
+
+# Test cases
+
+test_cases = [
+
+    ("aaabb", 3),
+
+    ("ababbc", 2),
+
+    ("ababab", 3),
+
+    ("xyzxyz", 2),
+
+    ("12345", 0)
+
+]
+
+
+
+for s, k in test_cases:
+
+    result = longest_substring(s, k)
+
+    print(f"Input: s = '{s}', k = {k}\nOutput: {result}\n")
+
+      
