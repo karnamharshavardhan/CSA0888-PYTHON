@@ -1,0 +1,61 @@
+
+
+def shuffle(l1, l2):
+
+    result = []
+
+    min_length = min(len(l1), len(l2))
+
+    
+
+    for i in range(min_length):
+
+        result.append(l1[i])
+
+        result.append(l2[i])
+
+    
+
+    result.extend(l1[min_length:])
+
+    result.extend(l2[min_length:])
+
+    
+
+    return result
+
+
+
+# Test cases
+
+test_cases = [
+
+    ([0, 4], [-1, 1]),
+
+    ([5], [5]),
+
+    ([10], [5]),
+
+    ([6], [9])
+
+]
+
+
+
+for l1, l2 in test_cases:
+
+    shuffled_list = shuffle(l1, l2)
+
+    print(f"Shuffled list = {shuffled_list}")
+
+
+
+Shuffled list = [0, -1, 4, 1]
+
+Shuffled list = [5]
+
+Shuffled list = [10, 5]
+
+Shuffled list = [6, 9]
+
+      
