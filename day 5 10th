@@ -1,0 +1,67 @@
+
+
+def reverse_words(s):
+
+    words = s.split()
+
+    reversed_words = ' '.join(reversed(words))
+
+    return reversed_words
+
+
+
+# Test cases
+
+test_cases = [
+
+    "the sky is blue",
+
+    " hello world ",
+
+    "a good example",
+
+    "apple is red",
+
+    "Red rose"
+
+]
+
+
+
+for s in test_cases:
+
+    result = reverse_words(s)
+
+    print(f"Input: '{s}'\nOutput: '{result}'\n")
+
+
+
+Input: 'the sky is blue'
+
+Output: 'blue is sky the'
+
+
+
+Input: ' hello world '
+
+Output: 'world hello'
+
+
+
+Input: 'a good example'
+
+Output: 'example good a'
+
+
+
+Input: 'apple is red'
+
+Output: 'red is apple'
+
+
+
+Input: 'Red rose'
+
+Output: 'rose Red'
+
+  
